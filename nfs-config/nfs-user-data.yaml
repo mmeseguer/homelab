@@ -1,0 +1,12 @@
+hostname: nfs
+
+users:
+  - name: marc
+    gecos: Marc
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQChVlO1xIsJrUIZKQWUr/gMUH6dBsSG77YdgKtQ2vbaReAdjIyUVRfoS6dzuvc8XE8WCWFnuIjA68eZ8OuadBfCIoiviGO3ru1/yuFpLdtnwYsv4xw9Rt/OaOWdM7+2AMPJ1hwPLl6v6e2gJReWir/3YRLMp7lc9z1olvVsySDMElrykl1F8EjiJFm7vkWI+A7IDFtRpM02ngAaScvouXYrMJFHj4ZRCC1L/856D1GgiGZIMlNDN6uayKi3lXhUBs4h6cq+1ZowY0n/hb0BnxlG1RPYOV58a29toUkL3a1um/kgQBBU86P/JepFG8SH6g8kBRXGFGDPeRfBIGWnf4/Kn/YKEz7kkf6ZL4EWX4aAGuwCDYjvlgG6MkgEg0TMtdU4pfVqDLIAZehjdz/jNM0/ccE2CPpue56ovJ2DQckPt1IGNYlyNCEfYGCurkm3SMQOlFRwzNTRIS29NMpOe1rDK8NLaP4egr7o/4GcUmvrZ4KpsQGbAQBpnwr3S5mD7/M= marc@rtint
+
+package_update: true
+package_upgrade: true
