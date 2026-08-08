@@ -1,0 +1,12 @@
+---
+timezone: Europe/Madrid
+
+apt_packages:
+  - vim
+  - curl
+  - ca-certificates
+  - htop
+  - jq
+  - unzip
+
+firewall_enabled: true

@@ -1,0 +1,10 @@
+---
+- name: Configure management server
+  hosts: localhost
+  become: true
+
+  vars:
+    firewall_enabled: false
+
+  roles:
+    - common
