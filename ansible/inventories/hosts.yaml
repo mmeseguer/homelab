@@ -1,0 +1,6 @@
+all:
+  children:
+    management:
+      hosts:
+        management-lxc:
+          ansible_connection: local
