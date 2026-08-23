@@ -1,5 +1,9 @@
 # Secret management for IaC
 
+## Status
+
+✅ **Accepted**
+
 ## Context and Problem Statement
 
 When deploying the homelab we face the problem of handling the secrets for IaC (Terraform and Ansible) because we don't have a cluster already deployed to deploy a Vault solution.
