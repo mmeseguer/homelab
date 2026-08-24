@@ -1,0 +1,37 @@
+---
+# Terraform installation
+- name: Install deb822_repository module prerequisites
+  become: true
+  ansible.builtin.apt:
+    name: "{{ deb822_repository_prerequisites }}"
+    state: present
+    update_cache: yes
+
+- name: Configure HashiCorp APT repository
+  become: true
+  ansible.builtin.deb822_repository:
+    name: hashicorp
+    types:
+      - deb
+    uris:
+      - https://apt.releases.hashicorp.com
+    suites:
+      - "{{ ansible_facts['distribution_release'] }}"
+    components:
+      - main
+    signed_by: https://apt.releases.hashicorp.com/gpg
+    state: present
+  register: hashicorp_repository
+
+- name: Update APT cache after configuring HashiCorp repository
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+  when: hashicorp_repository.changed
+
+- name: Install Terraform
+  become: true
+  ansible.builtin.apt:
+    name: "terraform={{ terraform_version }}"
+    state: present
+    allow_downgrade: true

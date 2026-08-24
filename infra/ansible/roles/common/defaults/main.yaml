@@ -8,5 +8,7 @@ apt_packages:
   - htop
   - jq
   - unzip
+  - gnupg
+  - software-properties-common
 
 firewall_enabled: true
