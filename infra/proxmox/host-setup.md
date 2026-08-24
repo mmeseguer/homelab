@@ -56,3 +56,26 @@ To be able to interact with Cloud init
 ```bash
 apt update && apt install -y cloud-image-utils
 ```
+
+## Create user for Terraform
+
+Create a dedicated user for Terraform and limit its permissions
+
+```bash
+# Create user
+pveum user add terraform@pve
+
+# Create role
+pveum role add Terraform -privs "VM.Allocate,VM.Audit,VM.Clone,VM.Config.CPU,VM.Config.Memory,VM.Config.Disk,VM.Config.Network,VM.Config.Cloudinit,VM.Config.Options,VM.Config.HWType,VM.PowerMgmt,Datastore.AllocateSpace,Datastore.Audit,SDN.Use,Sys.Audit"
+
+# Assign role
+pveum aclmod / -user terraform@pve -role Terraform
+```
+
+Create the API token for the user
+
+```bash
+pveum user token add terraform@pve provider --privsep=0
+```
+
+Save the output in the password manager as there's no way to get this information again, it should be regenerated.
