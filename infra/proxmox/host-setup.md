@@ -66,7 +66,7 @@ Create a dedicated user for Terraform and limit its permissions
 pveum user add terraform@pve
 
 # Create role
-pveum role add Terraform -privs "VM.Allocate,VM.Audit,VM.Clone,VM.Config.CPU,VM.Config.Memory,VM.Config.Disk,VM.Config.Network,VM.Config.Cloudinit,VM.Config.Options,VM.Config.HWType,VM.PowerMgmt,Datastore.AllocateSpace,Datastore.Audit,SDN.Use,Sys.Audit"
+pveum role add Terraform -privs "VM.Allocate,VM.Audit,VM.Clone,VM.Config.CDROM,VM.Config.CPU,VM.Config.Memory,VM.Config.Disk,VM.Config.Network,VM.Config.Cloudinit,VM.Config.Options,VM.Config.HWType,VM.Monitor,VM.PowerMgmt,Datastore.AllocateSpace,Datastore.Audit,SDN.Use,Sys.Audit"
 
 # Assign role
 pveum aclmod / -user terraform@pve -role Terraform
