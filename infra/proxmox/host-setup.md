@@ -50,11 +50,11 @@ echo "PermitRootLogin no" >> /etc/ssh/sshd_config.d/90-homelab.conf
 
 service sshd restart
 ```
-## Install cloud-image-utils
+## Install cloud-image-utils and libguestfs-tools
 
-To be able to interact with Cloud init
+To be able to interact with Cloud init and customize images:
 ```bash
-apt update && apt install -y cloud-image-utils
+apt update && apt install -y cloud-image-utils libguestfs-tools
 ```
 
 ## Create user for Terraform
